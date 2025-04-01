@@ -24,7 +24,7 @@ const Home = () => {
     </p>
 
     return (
-        <div className="bg-base-200">
+        <div className="min-h-screen bg-base-200">
             <div className="container mx-auto p-4">
                 <div className="text-center mb-8">
                     <h1 className="text-4xl font-bold text-primary mb-2">
