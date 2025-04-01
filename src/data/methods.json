@@ -1,0 +1,102 @@
+[
+    {
+        "title": "split",
+        "description": "Este método separa una cadena en un arreglo de subcadenas, basándose en un separador especificado.",
+        "example": "'hola mundo'.split(' ') // ['hola', 'mundo']"
+    },
+    {
+        "title": "toLowerCase",
+        "description": "Convierte todos los caracteres de una cadena a minúsculas.",
+        "example": "'Hola Mundo'.toLowerCase() // 'hola mundo'"
+    },
+    {
+        "title": "toUpperCase",
+        "description": "Convierte todos los caracteres de una cadena a mayúsculas.",
+        "example": "'Hola Mundo'.toUpperCase() // 'HOLA MUNDO'"
+    },
+    {
+        "title": "charAt",
+        "description": "Devuelve el carácter en una posición específica dentro de una cadena.",
+        "example": "'Hola Mundo'.charAt(4) // 'o'"
+    },
+    {
+        "title": "charCodeAt",
+        "description": "Devuelve el valor Unicode de un carácter en una posición específica.",
+        "example": "'Hola'.charCodeAt(0) // 72"
+    },
+    {
+        "title": "concat",
+        "description": "Se utiliza para concatenar dos o más cadenas y devolver una nueva cadena.",
+        "example": "'Hola'.concat(' Mundo') // 'Hola Mundo'"
+    },
+    {
+        "title": "indexOf",
+        "description": "Devuelve el índice de la primera aparición de un valor dentro de una cadena. Si no lo encuentra, devuelve -1.",
+        "example": "'Hola Mundo'.indexOf('Mundo') // 5"
+    },
+    {
+        "title": "lastIndexOf",
+        "description": "Devuelve el índice de la última aparición de un valor dentro de una cadena.",
+        "example": "'Hola Mundo Mundo'.lastIndexOf('Mundo') // 10"
+    },
+    {
+        "title": "includes",
+        "description": "Determina si una cadena contiene otra cadena o valor, devolviendo true o false.",
+        "example": "'Hola Mundo'.includes('Mundo') // true"
+    },
+    {
+        "title": "replace",
+        "description": "Reemplaza una subcadena o patrón en una cadena con una nueva subcadena.",
+        "example": "'Hola Mundo'.replace('Mundo', 'JavaScript') // 'Hola JavaScript'"
+    },
+    {
+        "title": "match",
+        "description": "Busca una coincidencia en la cadena utilizando una expresión regular y devuelve un arreglo con las coincidencias encontradas.",
+        "example": "'Hola Mundo'.match(/o/) // ['o']"
+    },
+    {
+        "title": "search",
+        "description": "Realiza una búsqueda en la cadena utilizando una expresión regular, devolviendo el índice de la primera coincidencia.",
+        "example": "'Hola Mundo'.search(/Mundo/) // 5"
+    },
+    {
+        "title": "slice",
+        "description": "Extrae una sección de una cadena y la devuelve como una nueva cadena, sin modificar la original.",
+        "example": "'Hola Mundo'.slice(0, 4) // 'Hola'"
+    },
+    {
+        "title": "trim",
+        "description": "Elimina los espacios en blanco al principio y al final de una cadena.",
+        "example": "'   Hola Mundo   '.trim() // 'Hola Mundo'"
+    },
+    {
+        "title": "padStart",
+        "description": "Rellena el principio de una cadena con otro valor hasta alcanzar una longitud específica.",
+        "example": "'5'.padStart(3, '0') // '005'"
+    },
+    {
+        "title": "padEnd",
+        "description": "Rellena el final de una cadena con otro valor hasta alcanzar una longitud específica.",
+        "example": "'5'.padEnd(3, '0') // '500'"
+    },
+    {
+        "title": "substr",
+        "description": "Extrae una subcadena de una cadena, comenzando en una posición especificada y con una longitud determinada.",
+        "example": "'Hola Mundo'.substr(0, 4) // 'Hola'"
+    },
+    {
+        "title": "substring",
+        "description": "Extrae una subcadena entre dos índices especificados (sin incluir el índice final).",
+        "example": "'Hola Mundo'.substring(0, 4) // 'Hola'"
+    },
+    {
+        "title": "startsWith",
+        "description": "Determina si una cadena comienza con un valor específico.",
+        "example": "'Hola Mundo'.startsWith('Hola') // true"
+    },
+    {
+        "title": "endsWith",
+        "description": "Determina si una cadena termina con un valor específico.",
+        "example": "'Hola Mundo'.endsWith('Mundo') // true"
+    }
+]
