@@ -30,7 +30,7 @@ const Home = () => {
       <div className='container mx-auto p-4'>
         <div className='text-center mb-8'>
           <h1 className='text-4xl font-bold text-primary mb-2'>
-            String Methods - Grupo 5
+            String Methods
           </h1>
           <p className='text-base-content text-opacity-70 text-lg'>
             Directo desde el corazón del
