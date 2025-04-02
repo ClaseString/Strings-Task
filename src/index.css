@@ -1,18 +1,15 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import 'tailwindcss';
 
 @plugin "daisyui" {
-    themes: all;
+  themes: all;
 }
 
 html,
 body {
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-* {
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-base-200);
 }
