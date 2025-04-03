@@ -29,7 +29,7 @@ Creada por el **Grupo 5** como parte de una actividad en clase de Desarrollo Web
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tu-usuario/string-methods-app.git
+git clone https://github.com/ClaseString/Strings-Task.git
 ```
 
 ### 2. Entra al directorio del proyecto
