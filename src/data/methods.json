@@ -11,19 +11,22 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => JSON.stringify(str.split(params[0] || ' '))"
+        "handler": "(str, params) => JSON.stringify(str.split(params[0] || ' '))",
+        "icon": "SquareSplitHorizontal"
     },
     {
         "title": "toLowerCase",
         "description": "Convierte todos los caracteres de una cadena a minúsculas.",
         "example": "'Hola Mundo'.toLowerCase() // 'hola mundo'",
-        "handler": "(str) => str.toLowerCase()"
+        "handler": "(str) => str.toLowerCase()",
+        "icon": "CaseLower"
     },
     {
         "title": "toUpperCase",
         "description": "Convierte todos los caracteres de una cadena a mayúsculas.",
         "example": "'Hola Mundo'.toUpperCase() // 'HOLA MUNDO'",
-        "handler": "(str) => str.toUpperCase()"
+        "handler": "(str) => str.toUpperCase()",
+        "icon": "CaseUpper"
     },
     {
         "title": "charAt",
@@ -37,7 +40,8 @@
                 "type": "number"
             }
         ],
-        "handler": "(str, params) => str.charAt(parseInt(params[0]) || 0)"
+        "handler": "(str, params) => str.charAt(parseInt(params[0]) || 0)",
+        "icon": "WholeWord"
     },
     {
         "title": "charCodeAt",
@@ -51,7 +55,8 @@
                 "type": "number"
             }
         ],
-        "handler": "(str, params) => str.charCodeAt(parseInt(params[0]) || 0)"
+        "handler": "(str, params) => str.charCodeAt(parseInt(params[0]) || 0)",
+        "icon": "Barcode"
     },
     {
         "title": "concat",
@@ -64,7 +69,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.concat(params[0] || '')"
+        "handler": "(str, params) => str.concat(params[0] || '')",
+        "icon": "Link"
     },
     {
         "title": "indexOf",
@@ -77,7 +83,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.indexOf(params[0] || '')"
+        "handler": "(str, params) => str.indexOf(params[0] || '')",
+        "icon": "ArrowRightCircle"
     },
     {
         "title": "lastIndexOf",
@@ -90,7 +97,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.lastIndexOf(params[0] || '')"
+        "handler": "(str, params) => str.lastIndexOf(params[0] || '')",
+        "icon": "ArrowLeftCircle"
     },
     {
         "title": "includes",
@@ -103,7 +111,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.includes(params[0] || '')"
+        "handler": "(str, params) => str.includes(params[0] || '')",
+        "icon": "Search"
     },
     {
         "title": "replace",
@@ -121,7 +130,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.replace(params[0] || '', params[1] || '')"
+        "handler": "(str, params) => str.replace(params[0] || '', params[1] || '')",
+        "icon": "Replace"
     },
     {
         "title": "match",
@@ -134,7 +144,8 @@
                 "type": "regex"
             }
         ],
-        "handler": "(str, params) => JSON.stringify(str.match(new RegExp(params[0])))"
+        "handler": "(str, params) => JSON.stringify(str.match(new RegExp(params[0])))",
+        "icon": "ListChecks"
     },
     {
         "title": "search",
@@ -147,7 +158,8 @@
                 "type": "regex"
             }
         ],
-        "handler": "(str, params) => str.search(new RegExp(params[0]))"
+        "handler": "(str, params) => str.search(new RegExp(params[0]))",
+        "icon": "Search"
     },
     {
         "title": "slice",
@@ -165,13 +177,15 @@
                 "type": "number"
             }
         ],
-        "handler": "(str, params) => str.slice(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)"
+        "handler": "(str, params) => str.slice(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)",
+        "icon": "Crop"
     },
     {
         "title": "trim",
         "description": "Elimina los espacios en blanco al principio y al final de una cadena.",
         "example": "'   Hola Mundo   '.trim() // 'Hola Mundo'",
-        "handler": "(str) => str.trim()"
+        "handler": "(str) => str.trim()",
+        "icon": "Scissors"
     },
     {
         "title": "padStart",
@@ -190,7 +204,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.padStart(parseInt(params[0]) || 0, params[1] || ' ')"
+        "handler": "(str, params) => str.padStart(parseInt(params[0]) || 0, params[1] || ' ')",
+        "icon": "AlignLeft"
     },
     {
         "title": "padEnd",
@@ -209,7 +224,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.padEnd(parseInt(params[0]) || 0, params[1] || ' ')"
+        "handler": "(str, params) => str.padEnd(parseInt(params[0]) || 0, params[1] || ' ')",
+        "icon": "AlignRight"
     },
     {
         "title": "substr",
@@ -227,7 +243,8 @@
                 "type": "number"
             }
         ],
-        "handler": "(str, params) => str.substr(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)"
+        "handler": "(str, params) => str.substr(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)",
+        "icon": "Scissors"
     },
     {
         "title": "substring",
@@ -245,7 +262,8 @@
                 "type": "number"
             }
         ],
-        "handler": "(str, params) => str.substring(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)"
+        "handler": "(str, params) => str.substring(parseInt(params[0]) || 0, parseInt(params[1]) || undefined)",
+        "icon": "Scissors"
     },
     {
         "title": "startsWith",
@@ -258,7 +276,8 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.startsWith(params[0] || '')"
+        "handler": "(str, params) => str.startsWith(params[0] || '')",
+        "icon": "ArrowRightCircle"
     },
     {
         "title": "endsWith",
@@ -271,6 +290,7 @@
                 "type": "string"
             }
         ],
-        "handler": "(str, params) => str.endsWith(params[0] || '')"
+        "handler": "(str, params) => str.endsWith(params[0] || '')",
+        "icon": "ArrowLeftCircle"
     }
 ]
