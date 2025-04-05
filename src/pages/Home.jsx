@@ -98,7 +98,7 @@ export default function Home() {
           <div className="collapse-content text-sm text-base-content">
             <pre className="bg-base-200 p-2 rounded overflow-x-auto mb-2">
               <code>
-                {`const nombre = "Javier";
+                {`const nombre = "Juanma";
 let saludo = 'Hola';
 var frase = \`Bienvenido \${nombre}\`;`}
               </code>
