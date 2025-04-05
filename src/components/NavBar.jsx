@@ -22,6 +22,14 @@ const NavBar = () => {
           Inicio
         </Link>
         <Link
+          to="/methods"
+          className={`btn btn-ghost text-lg ${
+            isActive("/") ? "btn-active text-primary" : ""
+          }`}
+        >
+          Métodos
+        </Link>
+        <Link
           to="/quizz"
           className={`btn btn-ghost text-lg ${
             isActive("/quizz") ? "btn-active text-primary" : ""

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
+import Methods from "./pages/Methods";
 import Quizz from "./pages/Quizz";
+import Home from "./pages/Home";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/methods" element={<Methods />} />
             <Route path="/quizz" element={<Quizz />} />
           </Routes>
         </main>
