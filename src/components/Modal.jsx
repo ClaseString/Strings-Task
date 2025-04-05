@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion'; // Importa framer-motion
 
 const Modal = ({ isOpen, onClose, stringMethod }) => {
   const [inputString, setInputString] = useState('Hola Mundo');
@@ -18,12 +19,12 @@ const Modal = ({ isOpen, onClose, stringMethod }) => {
         if (param.type === 'regex') return value.replace(/^\/|\/$/g, '');
         return value;
       }) || [];
-      
+
       const methodResult = handler(inputString, processedParams);
-      setResult(typeof methodResult === 'object' 
-        ? JSON.stringify(methodResult, null, 2) 
+      setResult(typeof methodResult === 'object'
+        ? JSON.stringify(methodResult, null, 2)
         : String(methodResult));
-        
+
     } catch (error) {
       setResult(`Error: ${error.message}`);
     }
@@ -33,7 +34,13 @@ const Modal = ({ isOpen, onClose, stringMethod }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="bg-base-100 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-auto">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.3 }}
+        className="bg-base-100 rounded-lg shadow-xl w-full max-w-3xl max-h-[90vh] overflow-auto"
+      >
         <div className="p-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-2xl font-bold text-primary">
@@ -64,16 +71,16 @@ const Modal = ({ isOpen, onClose, stringMethod }) => {
 
           <div className="mb-6 p-4 bg-base-200 rounded-lg">
             <h3 className="text-lg font-semibold mb-3">¡Pruébalo tú mismo!</h3>
-            
+
             <div className="form-control mb-2">
               <label className="label">
                 <span className="label-text">Ingresa un texto:</span>
               </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={inputString}
                 onChange={(e) => setInputString(e.target.value)}
-                className="input input-bordered w-full" 
+                className="input input-bordered w-full"
               />
             </div>
 
@@ -96,8 +103,8 @@ const Modal = ({ isOpen, onClose, stringMethod }) => {
               </div>
             )}
 
-            <button 
-              onClick={executeMethod} 
+            <button
+              onClick={executeMethod}
               className="btn btn-primary w-full mt-4"
             >
               Ejecutar Método
@@ -121,7 +128,7 @@ const Modal = ({ isOpen, onClose, stringMethod }) => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
