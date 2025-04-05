@@ -41,7 +41,7 @@ export default function Home() {
       {/* Sección de slides colapsables */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-4/5 mx-auto">
         {/* Slide 1 */}
-        <div className="collapse collapse-arrow bg-base-100 text-primary">
+        <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
           <div className="collapse-title text-lg font-semibold">
             🎓 Integrantes
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         {/* Slide 2 */}
-        <div className="collapse collapse-arrow bg-base-100 text-primary">
+        <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
           <div className="collapse-title text-lg font-semibold">
             🧠 ¿Qué es un String?
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
 
         {/* Slide 3 */}
-        <div className="collapse collapse-arrow bg-base-100 text-primary">
+        <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
           <div className="collapse-title text-lg font-semibold">
             ✍️ Cómo se declara un String
@@ -111,7 +111,7 @@ var frase = \`Bienvenido \${nombre}\`;`}
         </div>
 
         {/* Slide 4 */}
-        <div className="collapse collapse-arrow bg-base-100 text-primary">
+        <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
           <div className="collapse-title text-lg font-semibold">
             📘 ¿Qué es el objeto String?
