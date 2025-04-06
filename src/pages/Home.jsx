@@ -7,7 +7,7 @@ const NeonNameAnimator = () => {
     "Domingo Fleitas",
     "Javier Cordero",
     "Kevin Jiménez",
-    "Adán Pérez"
+    "Adán Pérez",
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -124,31 +124,44 @@ export default function Home() {
         {/* Slide 1 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">🎓 Integrantes</div>
+          <div className="collapse-title text-lg font-semibold">
+            🎓 Integrantes
+          </div>
           <div className="collapse-content text-sm text-base-content">
-            <p>
-              <strong>Alumnos:</strong>
-              <br />
+            <div>
+              <p>
+                <strong>Alumnos:</strong>
+              </p>
               <NeonNameAnimator />
+            </div>
+            <br />
+            <p>
+              <strong>Ciclo:</strong> 2º DAW
             </p>
             <br />
-            <p><strong>Ciclo:</strong> 2º DAW</p>
+            <p>
+              <strong>Módulo:</strong> Desarrollo Web (DEW)
+            </p>
             <br />
-            <p><strong>Módulo:</strong> Desarrollo Web (DEW)</p>
-            <br />
-            <p><strong>Unidad:</strong> 4 – Tarea Grupal</p>
+            <p>
+              <strong>Unidad:</strong> 4 – Tarea Grupal
+            </p>
           </div>
         </div>
 
         {/* Slide 2 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">🧠 ¿Qué es un String?</div>
+          <div className="collapse-title text-lg font-semibold">
+            🧠 ¿Qué es un String?
+          </div>
           <div className="collapse-content text-sm text-base-content">
             <ul className="list-disc list-inside mb-2">
               <li>Es un tipo de dato primitivo.</li>
               <li>Representa una secuencia de caracteres (texto).</li>
-              <li>Se puede declarar con comillas simples, dobles o backticks.</li>
+              <li>
+                Se puede declarar con comillas simples, dobles o backticks.
+              </li>
             </ul>
             <pre className="bg-base-200 p-2 rounded overflow-x-auto">
               <code>const mensaje = "Hola, mundo!";</code>
@@ -159,7 +172,9 @@ export default function Home() {
         {/* Slide 3 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">✍️ Cómo se declara un String</div>
+          <div className="collapse-title text-lg font-semibold">
+            ✍️ Cómo se declara un String
+          </div>
           <div className="collapse-content text-sm text-base-content">
             <pre className="bg-base-200 p-2 rounded overflow-x-auto mb-2">
               <code>
@@ -169,7 +184,8 @@ var frase = \`Bienvenido \${nombre}\`;`}
               </code>
             </pre>
             <p>
-              Las <strong>template strings</strong> permiten interpolación con <code>${"{nombre}"}</code>.
+              Las <strong>template strings</strong> permiten interpolación con{" "}
+              <code>${"{nombre}"}</code>.
             </p>
           </div>
         </div>
@@ -177,17 +193,29 @@ var frase = \`Bienvenido \${nombre}\`;`}
         {/* Slide 4 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">📘 ¿Qué es el objeto String?</div>
+          <div className="collapse-title text-lg font-semibold">
+            📘 ¿Qué es el objeto String?
+          </div>
           <div className="collapse-content text-sm text-base-content">
             <p>
-              Aunque los Strings son primitivos, JavaScript los convierte temporalmente en objetos para acceder a sus métodos.
+              Aunque los Strings son primitivos, JavaScript los convierte
+              temporalmente en objetos para acceder a sus métodos.
             </p>
             <p className="mt-2">Algunos métodos útiles:</p>
             <ul className="list-disc list-inside">
-              <li><code>.length</code></li>
-              <li><code>.toUpperCase()</code> / <code>.toLowerCase()</code></li>
-              <li><code>.charAt()</code> / <code>.charCodeAt()</code></li>
-              <li><code>.includes()</code>, <code>.replace()</code>, <code>.slice()</code></li>
+              <li>
+                <code>.length</code>
+              </li>
+              <li>
+                <code>.toUpperCase()</code> / <code>.toLowerCase()</code>
+              </li>
+              <li>
+                <code>.charAt()</code> / <code>.charCodeAt()</code>
+              </li>
+              <li>
+                <code>.includes()</code>, <code>.replace()</code>,{" "}
+                <code>.slice()</code>
+              </li>
             </ul>
           </div>
         </div>
