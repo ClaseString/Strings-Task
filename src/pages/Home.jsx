@@ -1,8 +1,87 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { groupNames } from "../data/names";
 
+// 🔵 Componente para animar nombres fila por fila
+const NeonNameAnimator = () => {
+  const names = [
+    "Domingo Fleitas",
+    "Javier Cordero",
+    "Kevin Jiménez",
+    "Adán Pérez"
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [letterCount, setLetterCount] = useState(0);
+  const [completedIndexes, setCompletedIndexes] = useState([]);
+
+  useEffect(() => {
+    let timeout;
+
+    const currentName = names[activeIndex];
+    const totalLetters = currentName.length;
+
+    if (letterCount <= totalLetters) {
+      timeout = setTimeout(() => {
+        setLetterCount((prev) => prev + 1);
+      }, 100);
+    }
+
+    if (letterCount > totalLetters) {
+      timeout = setTimeout(() => {
+        const nextIndex = activeIndex + 1;
+        const newCompleted = [...completedIndexes, activeIndex];
+
+        if (nextIndex >= names.length) {
+          // Reiniciar ciclo
+          setCompletedIndexes([]);
+          setActiveIndex(0);
+          setLetterCount(0);
+        } else {
+          setCompletedIndexes(newCompleted);
+          setActiveIndex(nextIndex);
+          setLetterCount(0);
+        }
+      }, 1000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [letterCount, activeIndex]);
+
+  return (
+    <div className="space-y-1">
+      {names.map((fullName, idx) => {
+        const isActive = idx === activeIndex;
+        const isCompleted = completedIndexes.includes(idx);
+
+        return (
+          <div key={idx}>
+            {fullName.split("").map((char, i) => {
+              const showAnimated = isActive && i < letterCount;
+              const showStatic = isCompleted;
+
+              return (
+                <span
+                  key={i}
+                  className={
+                    showAnimated
+                      ? "animated-letter-loop"
+                      : showStatic
+                      ? "neon-letter-static"
+                      : "dimmed-letter"
+                  }
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              );
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 export default function Home() {
-  // 🔀 Mezclar nombres una sola vez
   const shuffledNames = useMemo(() => {
     return [...groupNames].sort(() => 0.5 - Math.random());
   }, []);
@@ -38,50 +117,36 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Sección de slides colapsables */}
+      {/* Slides */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-4/5 mx-auto">
         {/* Slide 1 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">
-            🎓 Integrantes
-          </div>
+          <div className="collapse-title text-lg font-semibold">🎓 Integrantes</div>
           <div className="collapse-content text-sm text-base-content">
             <p>
               <strong>Alumnos:</strong>
-              <br /> Domingo Fleitas
-              <br /> Javier Cordero
-              <br /> Kevin Jiménez
-              <br /> Adán Pérez
+              <br />
+              <NeonNameAnimator />
             </p>
             <br />
-            <p>
-              <strong>Ciclo:</strong> 2º DAW
-            </p>
+            <p><strong>Ciclo:</strong> 2º DAW</p>
             <br />
-            <p>
-              <strong>Módulo:</strong> Desarrollo Web (DEW)
-            </p>
+            <p><strong>Módulo:</strong> Desarrollo Web (DEW)</p>
             <br />
-            <p>
-              <strong>Unidad:</strong> 4 – Tarea Grupal
-            </p>
+            <p><strong>Unidad:</strong> 4 – Tarea Grupal</p>
           </div>
         </div>
 
         {/* Slide 2 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">
-            🧠 ¿Qué es un String?
-          </div>
+          <div className="collapse-title text-lg font-semibold">🧠 ¿Qué es un String?</div>
           <div className="collapse-content text-sm text-base-content">
             <ul className="list-disc list-inside mb-2">
               <li>Es un tipo de dato primitivo.</li>
               <li>Representa una secuencia de caracteres (texto).</li>
-              <li>
-                Se puede declarar con comillas simples, dobles o backticks.
-              </li>
+              <li>Se puede declarar con comillas simples, dobles o backticks.</li>
             </ul>
             <pre className="bg-base-200 p-2 rounded overflow-x-auto">
               <code>const mensaje = "Hola, mundo!";</code>
@@ -92,9 +157,7 @@ export default function Home() {
         {/* Slide 3 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">
-            ✍️ Cómo se declara un String
-          </div>
+          <div className="collapse-title text-lg font-semibold">✍️ Cómo se declara un String</div>
           <div className="collapse-content text-sm text-base-content">
             <pre className="bg-base-200 p-2 rounded overflow-x-auto mb-2">
               <code>
@@ -104,8 +167,7 @@ var frase = \`Bienvenido \${nombre}\`;`}
               </code>
             </pre>
             <p>
-              Las <strong>template strings</strong> permiten interpolación con{" "}
-              <code>${"{nombre}"}</code>.
+              Las <strong>template strings</strong> permiten interpolación con <code>${"{nombre}"}</code>.
             </p>
           </div>
         </div>
@@ -113,29 +175,17 @@ var frase = \`Bienvenido \${nombre}\`;`}
         {/* Slide 4 */}
         <div className="collapse collapse-arrow bg-base-100 text-primary self-start">
           <input type="checkbox" />
-          <div className="collapse-title text-lg font-semibold">
-            📘 ¿Qué es el objeto String?
-          </div>
+          <div className="collapse-title text-lg font-semibold">📘 ¿Qué es el objeto String?</div>
           <div className="collapse-content text-sm text-base-content">
             <p>
-              Aunque los Strings son primitivos, JavaScript los convierte
-              temporalmente en objetos para acceder a sus métodos.
+              Aunque los Strings son primitivos, JavaScript los convierte temporalmente en objetos para acceder a sus métodos.
             </p>
             <p className="mt-2">Algunos métodos útiles:</p>
             <ul className="list-disc list-inside">
-              <li>
-                <code>.length</code>
-              </li>
-              <li>
-                <code>.toUpperCase()</code> / <code>.toLowerCase()</code>
-              </li>
-              <li>
-                <code>.charAt()</code> / <code>.charCodeAt()</code>
-              </li>
-              <li>
-                <code>.includes()</code>, <code>.replace()</code>,{" "}
-                <code>.slice()</code>, etc.
-              </li>
+              <li><code>.length</code></li>
+              <li><code>.toUpperCase()</code> / <code>.toLowerCase()</code></li>
+              <li><code>.charAt()</code> / <code>.charCodeAt()</code></li>
+              <li><code>.includes()</code>, <code>.replace()</code>, <code>.slice()</code></li>
             </ul>
           </div>
         </div>
