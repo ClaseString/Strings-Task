@@ -1,8 +1,11 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import Methods from "./pages/Methods";
-import Quizz from "./pages/Quizz";
-import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Methods from './pages/Methods';
+import Quizz from './pages/Quizz';
+import Home from './pages/Home';
+import { AudioDevilTrigger } from 'react-devil-trigger';
+
+import audioSrc from './assets/audio/audio_strings.mp3';
 
 const App = () => {
   return (
@@ -23,6 +26,17 @@ const App = () => {
             </p>
           </div>
         </footer>
+        <AudioDevilTrigger
+          audioSrc={audioSrc}
+          triggerWord="strings"
+          playingTitle="Strings en JS"
+          title="Dale al play webón"
+          easterEggText="Opa! Encontraste el Easter Egg! 🎉"
+          primaryColor="#f861b4"
+          secondaryColor="#71d1fe"
+          accentColor="#422ad5"
+          showEasterEggText={false}
+        />
       </div>
     </Router>
   );
