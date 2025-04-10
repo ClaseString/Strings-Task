@@ -22,7 +22,7 @@ const App = () => {
         <footer className="w-full h-16 bg-gradient-to-b from-transparent to-secondary mt-auto">
           <div className="container mx-auto flex items-center justify-center h-full">
             <p className="text-base-content text-opacity-80 text-lg">
-              Made with ❤️
+              Made with ❤️ by <span className="text-primary">Dream Team</span> 
             </p>
           </div>
         </footer>
